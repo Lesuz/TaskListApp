@@ -29,11 +29,11 @@ const TaskInput = props => {
                 value={enteredTask} />
                 {/*Button which starts the fucntion addTaskhandler*/}
                 <View style={styles.buttonContainer}>
-                    <View style= {styles.addButton}>
-                        <Button title="Add" onPress={addTaskHandler} color="#8A11C2" fontFamily="Caveat-Regular" />
+                    <View style= {styles.button}>
+                        <Button title="Add" onPress={addTaskHandler} color="#8A11C2" />
                     </View>
-                    <View style= {styles.cancelbutton}>
-                        <Button title="Cancel" onPress={props.onCancel} color="#DA3164" fontFamily="Caveat-Regular" />
+                    <View style= {styles.button}>
+                        <Button title="Cancel" onPress={props.onCancel} color="#DA3164" />
                     </View>
                 </View>
             </View>
@@ -59,13 +59,33 @@ const styles = StyleSheet.create ({
         paddingHorizontal: 20,
         paddingVertical: 5,
         height: 55,
-        marginBottom: 15
+        marginBottom: 15,
+        shadowColor: "#000",
+        shadowOffset: {
+	        width: 0,
+	        height: 6,
+        },
+        shadowOpacity: 0.37,
+        shadowRadius: 7.49,
+        elevation: 8
+
     },
     buttonContainer: {
-        flexDirection: "column"
+        flexDirection: "column",
+        
     },
-    addButton: {
-        fontSize: 65
+    button: {
+        width: 150,
+        height: 50,
+        shadowColor: "#000",
+        shadowOffset: {
+	        width: 0,
+	        height: 6,
+        },
+        shadowOpacity: 0.37,
+        shadowRadius: 7.49,
+        elevation: 8,
+        fontFamily: "Caveat-Bold"
     }
 });
 export default TaskInput;

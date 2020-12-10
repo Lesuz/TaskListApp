@@ -56,6 +56,7 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Caveat-Regular.ttf</string>
+		<string>Caveat-Bold.ttf</string>
 	</array>
 </dict>
 </plist>
