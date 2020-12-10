@@ -2,16 +2,18 @@
 
 // importing needed libraries and components
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 
 // this will be a new component that is going to be used in App.js
 // This component will return the the task with its styles
 const TaskItem = props => {
 
     return (
-        <View style={styles.list}>
-            <Text style={styles.listText}>{props.title}</Text>
-        </View>
+        <TouchableOpacity onLongPress={props.onDelete}>
+            <View style={styles.list}>
+                <Text style={styles.listText}>{props.title}</Text>
+            </View>
+        </TouchableOpacity>
     );
 };
 

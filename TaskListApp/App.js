@@ -2,7 +2,7 @@
 
 // importing components
 import React, {useState} from 'react';
-import { StyleSheet, View, Text, TextInput, Button, TouchableOpacity, Image, FlatList } from 'react-native';
+import { StyleSheet, View, Text, Button, TouchableOpacity, Image, FlatList } from 'react-native';
 // importing custom components
 import TaskItem from './components/TaskItem';
 import TaskInput from './components/TaskInput';
@@ -10,6 +10,8 @@ import TaskInput from './components/TaskInput';
 const App: () => React$Node = () => {
   // empty array for tasks
   const [tasks, setTasks] = useState([]);
+  // a state for if a task is being added or not
+  const [isAddMode, setIsAddMode] = useState(false);
 
   // function that executed when add button is pressed
   const addTaskHandler = taskTitle => {
@@ -17,7 +19,20 @@ const App: () => React$Node = () => {
     ...tasks, 
     {id: Math.random().toString(), value: taskTitle }
     ]);
+    setIsAddMode(false);
   }; 
+  // function for cancel button
+  const cancelAddTaskHandler = () => {
+    setIsAddMode(false);
+  }
+
+  // function which removes task
+  // removes only when item is pressed for longer - tapping does not delete it
+  const removeTaskHandler = taskId => {
+    setTasks(currentTasks => {
+          return currentTasks.filter((task) => task.id !== taskId);
+    })}
+
 
   return (
     <>
@@ -26,19 +41,21 @@ const App: () => React$Node = () => {
       <Image 
         style={styles.backgroundImage} 
         source={require('./images/AppBackground.png')}></Image>
-        <TaskInput onAddTask={addTaskHandler}/>
+        <TaskInput visible={isAddMode} onAddTask={addTaskHandler} onCancel={cancelAddTaskHandler}/>
         <FlatList 
         keyExtractor={(item, index) => item.id}
           data={tasks} 
-          renderItem={itemData => <TaskItem title={itemData.item.value}/>}
+          renderItem={itemData => <TaskItem  onDelete={removeTaskHandler.bind(this, itemData.item.id)} title={itemData.item.value}/>}
         />
-        {/*TouchableOpacity used as a button here
-        <TouchableOpacity
+        {/*TouchableOpacity used as a button here*/}
+        {/*Setting setIsAddMode to true to open modal where task can be input*/}
+        <TouchableOpacity 
+          onPress={() => setIsAddMode(true)}
           style={styles.roundAddButton}>
             <Image 
               style={styles.addButtonImage}
               source={require('./images/plusIconWhite.png')}></Image>
-        </TouchableOpacity> */}
+        </TouchableOpacity> 
     </View>
     </>
   );
