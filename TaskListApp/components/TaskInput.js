@@ -85,7 +85,7 @@ const styles = StyleSheet.create ({
         shadowOpacity: 0.37,
         shadowRadius: 7.49,
         elevation: 8,
-        fontFamily: "Caveat-Bold"
+        fontFamily: "AmaticSC-Regular"
     }
 });
 export default TaskInput;

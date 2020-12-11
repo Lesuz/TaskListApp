@@ -1,0 +1,37 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/AmaticSC-Bold.ttf",
+      "sha1": "e92bb7d613bead5c6c7e6b6718611e04c8f75c31"
+    },
+    {
+      "path": "assets/fonts/AmaticSC-Regular.ttf",
+      "sha1": "1d743cede4938e97e0797bd4a6303c9f4dc2c9e7"
+    },
+    {
+      "path": "assets/fonts/Caveat-Bold.ttf",
+      "sha1": "b9dd8ccd61eb595755479e84978ea2baf4797293"
+    },
+    {
+      "path": "assets/fonts/Caveat-Regular.ttf",
+      "sha1": "2c1c32010b6517aa28f0cde4f3015792a736222f"
+    },
+    {
+      "path": "assets/fonts/GFSNeohellenic-Regular.ttf",
+      "sha1": "db778ed14bce5d92275d26c6204d1daa32fad764"
+    },
+    {
+      "path": "assets/fonts/Kalam-Bold.ttf",
+      "sha1": "d3abec274d9eec7dc08e9ddf8d799b14d579bb15"
+    },
+    {
+      "path": "assets/fonts/Kalam-Light.ttf",
+      "sha1": "02477cc7a3b9bab6217b5232957bcc419f460589"
+    },
+    {
+      "path": "assets/fonts/Kalam-Regular.ttf",
+      "sha1": "160ae7d0e0ff1a1058156749109c9591909d5bd2"
+    }
+  ]
+}
