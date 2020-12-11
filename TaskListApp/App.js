@@ -50,6 +50,7 @@ function TaskList() {
         source={require('./images/AppBackground.png')}></Image>
         <Text style={styles.header}>Task List</Text>
         <TaskInput visible={isAddMode} onAddTask={addTaskHandler} onCancel={cancelAddTaskHandler}/>
+        {/* Placement for list of tasks*/ }
         <FlatList 
         keyExtractor={(item, index) => item.id}
           data={tasks} 
@@ -95,6 +96,7 @@ function About(){
     <Image 
       style={styles.backgroundImage} 
       source={require('./images/AppBackground.png')}></Image>
+      {/* Content of page */}
       <View>
         <Text style={styles.header}>About</Text>
         <Text style={styles.header2}> Current Version</Text>
@@ -115,6 +117,7 @@ function Manual(){
       style={styles.backgroundImage} 
       source={require('./images/AppBackground.png')}></Image>
       <View>
+        {/* Content of page */}
         <Text style={styles.header}>Manual</Text>
         <Text style={styles.header2}>Adding Task</Text>
         <Text style={styles.text}>To add a task, tap the + -sign located on the bottom right corner. 
@@ -134,9 +137,11 @@ function Contact(){
       style={styles.backgroundImage} 
       source={require('./images/AppBackground.png')}></Image>
       <View>
+        {/* Content of page */}
         <Text style={styles.header}>Contact Information</Text>
         <Text style={styles.text}>Feel free to connect with me on LinkedIn. 
         The code for this app can also be found on GitHub.</Text>
+        {/* Icons when pressed open link */}
         <View  style={styles.socials}>
           <TouchableOpacity style={styles.social2} onPress={() => Linking.openURL("https://www.linkedin.com/in/susanna-h%C3%A4m%C3%A4l%C3%A4inen-81557616b/")}>
             <Image style={styles.social} source={require('./images/linkedinwhite.png')} />
@@ -150,8 +155,7 @@ function Contact(){
   )
 }
 const App: () => React$Node = () => {
-  
-    
+    {/* Tab Navigation */}
     return (
       <NavigationContainer>
         <Tab.Navigator 
@@ -266,8 +270,6 @@ const styles = StyleSheet.create({
     width: 100,
     marginHorizontal: 30,
   }
-  
-    
 });
 
 export default App;
