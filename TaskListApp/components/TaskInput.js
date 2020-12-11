@@ -42,6 +42,8 @@ const TaskInput = props => {
     );
 };
 
+// Styling for page
+
 const styles = StyleSheet.create ({
     InputSite: {
         flexDirection: "column",

@@ -17,6 +17,7 @@ const TaskItem = props => {
     );
 };
 
+// Styling of page
 const styles = StyleSheet.create ({
     list: {
         padding: 10,
