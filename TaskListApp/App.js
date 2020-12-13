@@ -155,7 +155,7 @@ function Contact(){
   )
 }
 const App: () => React$Node = () => {
-    {/* Tab Navigation */}
+    {/* Tab Navigation using bottom tab navigation*/}
     return (
       <NavigationContainer>
         <Tab.Navigator 
